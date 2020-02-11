@@ -66,8 +66,9 @@ function processLength(list, callback) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
  */
-function processLastItem(/* CODE HERE */) {
+function processLastItem(stringList, callback) {
   /* CODE HERE */
+  return callback(stringList[stringList.length - 1]);
 }
 
 /**
@@ -87,8 +88,9 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
  */
-function processSum(/* CODE HERE */) {
+function processSum(numberList, callback) {
   /* CODE HERE */
+  // return callback(numberList.forEach(num => num));
 }
 
 /**
@@ -109,8 +111,9 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
  */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
   /* CODE HERE */
+  return callback(num1 * num2);
 }
 
 /**
@@ -133,8 +136,9 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
  */
-function processContains(/* CODE HERE */) {
+function processContains(item, list, callback) {
   /* CODE HERE */
+  return callback(list.includes(item) ? true : false);
 }
 
 /**
@@ -156,8 +160,9 @@ function processContains(/* CODE HERE */) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
  */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  // return callback()
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -178,8 +183,13 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
  */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+  let names = [];
+  runners.forEach(item => {
+    names.push(`${item.last_name}, ${item.first_name}`);
+  });
+  return names;
 }
 
 /**
